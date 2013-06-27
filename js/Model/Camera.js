@@ -27,14 +27,14 @@ function(FrameRate, _, Backbone) {
 
 			Telepresence.socket.on('cameraUpdated:' + this.get('id'), this.fetch);
 
-			FrameRate.on('change:value', this.loadMedia, this);
+			this.on('change:framerate', this.loadMedia);
 
 			this.on('change', function() {
 				Backbone.sync('update', this);
 			});
 		},
 		loadMedia: function() {
-			var frameRate = FrameRate.get('value'),
+			var frameRate = this.get('framerate'),
 				socketInfo = '?random=' + Math.random() + '&socketID=' + Telepresence.socket.socket.sessionid;;
 
 			// @TODO: Implement feature detation and use polyfill if browser doesn't support mjpeg.
@@ -45,7 +45,7 @@ function(FrameRate, _, Backbone) {
 		},
 		_polyfill: function() {
 			var _this = this,
-				fameRate = FrameRate.get('value'),
+				fameRate = this.get('framerate'),
 				valFr = 1000;
 
 			function setFeed() {

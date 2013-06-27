@@ -7,56 +7,62 @@
 
 /** Core */
 
-.theme-light label, .icon {
+body {
+	background: url('../img/ps_neutral.png');
+}
+
+.theme-extra-light label, .icon {
 	color: #222;
 }
 
 /** App */
-
+.theme-extra-light #telepresence-wrap .app-header {
+	border-bottom: 2px dotted #7ea700;
+	background: none;
+	color: #222;
+}
 /** @TODO: Change to more general page-header selector */
-.theme-light .page-header {
-	background: #7ea700;
+.theme-extra-light .page-header {
 	color: #ddd;
 	margin: 0 !important;
 	padding: 30px !important;
 }
 
-.theme-light #telepresence-wrap {
+.theme-extra-light #telepresence-wrap {
 	background: #fff;
+	border: 2px solid #7ea700;
 }
 
 /** Camera Navigation List */
 
-.theme-light #site-list {
+.theme-extra-light #site-list {
 	/** @TODO: Remove backround & border from main css */
 	background: none;
 	border: none;
 }
-.theme-light .site {
-	color: #ddd;
-	background: #222;
+.theme-extra-light .site {
+	color: #222;
 	padding: 10px;
-	border-left: 6px solid #555;
+	border-left: 6px solid #ccc;
 }
-.theme-light .site:hover {
-	background: #111;
-}
-.theme-light .site.active, .theme-light .site:hover {
+
+.theme-extra-light .site.active, .theme-extra-light .site:hover {
 	border-color: #7ea700;
+	background: none;
 }
-.theme-light .site:after {
+.theme-extra-light .site:after {
 	/** @TODO: Remove from main css */
 	content: "";
 }
-.theme-light .site .icon {
-	color: white;
+.theme-extra-light .site .icon {
+	color: #222;
 	padding: 0 15px;
 }
-.theme-light .site span {
+.theme-extra-light .site span {
 	position: relative;
 	top: 5px;
 }
-.theme-light .site.active:after {
+.theme-extra-light .site.active:after {
 	width: 0;
 	height: 0;
 	border-width: 15px;
@@ -65,41 +71,41 @@
 	content: "";
 	margin: 30px 10px;
 }
-.theme-light .cameras {
+.theme-extra-light .cameras {
 	background: #ddd;
 	margin-top: 19px;
 }
-.theme-light .camera {
+.theme-extra-light .camera {
 	color: #333;
 	margin-top: 0;
 }
-.theme-light .camera:hover {
+.theme-extra-light .camera:hover {
 	background: #7ea700 !important;
 }
 
-.theme-light #telepresence-dashboard {
+.theme-extra-light #telepresence-dashboard {
 	margin-top: 55px;
 }
 /** Controls */
 
-.theme-light #controls h3 {
+.theme-extra-light #controls h3 {
 	color: #222;
 }
 
-.theme-light .input-controls {
+.theme-extra-light .input-controls {
 	margin-right: 30px;
 }
 
-.theme-light .control {
+.theme-extra-light .control {
 	padding-right: 10px;
 }
 
-.theme-light label[for='slider-pan'] {
+.theme-extra-light label[for='slider-pan'] {
 	margin-top: -15px;
 	margin-bottom: 0;
 }
 
-.theme-light label[for='slider-tilt'] {
+.theme-extra-light label[for='slider-tilt'] {
 	margin-top: 200px;
 	margin-left: 0;
 	text-align: center;
@@ -107,25 +113,25 @@
 
 /** Kendo hacks */
 
-.theme-light .k-label {
+.theme-extra-light .k-label {
 	display: none !important;
 }
 
-.theme-light .k-select {
+.theme-extra-light .k-select {
 	height: 100%;
 }
 
 /** Video */
 
-.theme-light #stream {
+.theme-extra-light #stream {
 	margin-right: 22px;
-	background: #999;
+	background: #ccc;
 }
 
-.theme-light #stream h1 {
+.theme-extra-light #stream h1 {
 	color: #333;
 }
 
-.theme-light .tp-row {
+.theme-extra-light .tp-row {
 	margin-top: 22px;
 }

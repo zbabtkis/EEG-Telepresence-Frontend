@@ -35,7 +35,7 @@ require.config({
 
 window.Telepresence = {
 	defaults: {
-		theme: 'theme-light'
+		theme: 'theme-extra-light'
 	},
 	DEBUG: true,
 	debug: function(first) {
