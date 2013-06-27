@@ -1,0 +1,491 @@
+/**
+ * ===============================================
+ *               NEES Telepresence
+ * ===============================================
+ * Content
+ * -------
+ * ..1) App Header
+ * ..2) App Menu
+ * ..3) App Content
+ * ..4) App Controls
+ * ....a) Player Controls
+ * ....b) Camera Controls
+ * ..5) Responsive#
+ * -----------------------------------------------
+ */
+
+body {
+	background: #333;
+}
+.icon {
+	color: white;
+	background: none !important;
+	padding: 15px 20px 15px 0;
+	display: inline-block;
+	width: auto;
+	height: auto;
+	line-height: default;
+	vertical-align: text-top;
+}
+
+#telepresence-wrap.row {
+	margin: 0;
+}
+
+.k-slider-horizontal {
+    display: inline-block;
+    float: left;
+    width: 100%;
+    height: 26px;
+}
+
+.k-slider-vertical {
+    display: inline-block;
+    float: left;
+    width: 26px;
+    height: 480px;
+}
+
+#player-controls {
+	float: left;
+}
+
+#telepresence-wrap input {
+	background: none;
+	color: white;
+}
+
+.flash {
+	top: 0;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #fff;
+	z-index: 99999;
+}
+
+/** 
+ -------------------------------------------------
+ 1) App Header
+ -------------------------------------------------
+ */
+
+#page-header, #main-content-header {
+	background-color: #07C;
+	color: white;
+	height: 80px;
+	width: 100%;
+}
+#page-title {
+	float: left;
+	font-size: 26px;
+	padding: 15px;
+	margin-top: 0;
+	padding: 10px;
+}
+/** 
+ -------------------------------------------------
+ 2) App Menu
+ -------------------------------------------------
+ */
+
+#menu-header {
+	padding: 0;
+	background: #111;
+	margin: 10px 0 0 0;
+	border-bottom: 1px solid #eee;
+}
+#info-view .inner-view {
+	padding: 5px;
+}
+#info-view {
+	background: #eee;
+	color: #222;
+}
+
+#help-tab {
+	float: left;
+	padding: 0;
+	cursor: pointer;
+}
+
+#list-tab {
+	float: right;
+	padding: 0;
+	cursor: pointer;
+}
+
+#telepresence-dashboard {
+	clear: both;
+	margin-top: 60px;
+}
+
+#site-list {
+	margin: 0;
+	padding: 0;
+	background: #222;
+	border: 1px solid #333;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.site, .camera {
+	cursor: pointer;
+	padding: 6px;
+	margin-top: 5px;
+	list-style: none;
+	color: #ccc;
+}
+.site:hover {
+	background: #008886;
+}
+
+.site.active {
+	background: #111;
+}
+.site.active:hover {
+	background: #111;
+}
+.cameras {
+	display: none;
+	margin: 0;
+}
+.cameras.active {
+	display: block;
+}
+.cameras li{
+	padding-left: 20px;
+}
+.cameras li:hover {
+	background: #00aba9;
+	color: #eee;
+}
+.camera .icon {
+	padding: 0 15px 0 0;
+}
+.site.active:after {
+	content: "\25BC";
+	float: right;
+}
+.site:after {
+content: "\25B6";
+float: right;
+}
+
+/** 
+ -------------------------------------------------
+ 3) App Content
+ -------------------------------------------------
+ */
+#telepresence-wrap {
+	background-color: #101214;
+	overflow: visible;
+	padding: 15px;
+	float: left;
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+#telepresence-wrap header {
+	background: #222;
+	margin: 0;
+	padding: 15px;
+	margin: -15px -15px 30px -15px;
+	color: white;
+}
+#telepresence-wrap h3, #telepresence-wrap h4, #telepresence-wrap h5 {
+	color: #eee;
+	text-align: center;
+}
+#telepresence-menu {
+	float: left;
+	overflow: auto;
+	height: 535px;
+	width: 360px;
+}
+#video {
+	width: 65%;
+	min-width: 760px;
+	float: right;
+}
+#stream {
+	overflow: hidden;
+	position: relative;
+}
+#stream .stream-image {
+	width: 100%;
+	background: #000;
+}
+#stream.stream-ended .stream-image {
+	-webkit-animation: blurOut 2s;
+	-moz-animation: blurOut 2s;
+	-o-animation: blurOut 2s;
+	animation: blurOut 2s;
+
+	-webkit-filter: blur(15px);
+	-moz-filter: blur(15px);
+	-o-transition: blur(15px);
+	filter: blur(15px);
+}
+
+#stream.stream-ended .reload {
+	height: 150px;
+	width: 150px;
+	position: absolute;
+	margin-top: 150px;
+	margin-left: 275px;
+	z-index: 1;
+}
+
+@keyframes blurOut {
+	from {
+		-webkit-filter: blur(0);
+		-moz-filter: blur(0);
+		-o-transition: blur(0);
+		filter: blur(0);
+	}
+	to {
+		-webkit-filter: blur(15px);
+		-moz-filter: blur(15px);
+		-o-transition: blur(15px);
+		filter: blur(15px);
+	}
+}
+
+@-webkit-keyframes blurOut {
+	from {
+		-webkit-filter: blur(0);
+		-moz-filter: blur(0);
+		-o-transition: blur(0);
+		filter: blur(0);
+	}
+	to {
+		-webkit-filter: blur(15px);
+		-moz-filter: blur(15px);
+		-o-transition: blur(15px);
+		filter: blur(15px);
+	}
+}
+
+@-moz-keyframes blurOut {
+	from {
+		-webkit-filter: blur(0);
+		-moz-filter: blur(0);
+		-o-transition: blur(0);
+		filter: blur(0);
+	}
+	to {
+		-webkit-filter: blur(15px);
+		-moz-filter: blur(15px);
+		-o-transition: blur(15px);
+		filter: blur(15px);
+	}
+}
+
+@-o-keyframes blurOut {
+	from {
+		-webkit-filter: blur(0);
+		-moz-filter: blur(0);
+		-o-transition: blur(0);
+		filter: blur(0);
+	}
+	to {
+		-webkit-filter: blur(15px);
+		-moz-filter: blur(15px);
+		-o-transition: blur(15px);
+		filter: blur(15px);
+	}
+}
+#nvf-frame img.fullScreen {
+	max-height: 100%;
+}
+#stream {
+	height: 480px;
+	width: 700px;
+	margin-right: 10px;
+	background: #000;
+	float: left;
+}
+#stream .telepresence-message {
+	top: 50%;
+	margin-top: -1em;
+	position: relative;
+	width: 100%;
+	text-align: center;
+	color: #777;
+}
+/** 
+ -------------------------------------------------
+ 4) App Controls
+ -------------------------------------------------
+ */
+
+.fullScreen {
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 99999999;
+}
+
+.transparentBar {
+	position: absolute;
+	bottom: 0;
+	opacity: 0.2;
+	-moz-opacity: 0.2;
+	-o-opacity: 0.2;
+	-wekbit-opacity: 0.2;
+	background-color: black;
+	z-index: -1;
+}
+.transparentBar:hover {
+	opacity: 0.9;
+	-moz-opacity: 0.9;
+	-o-opacity: 0.9;
+	-webkit-opacity: 0.9;
+}
+.transparentBox {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #222;
+    opacity: 0.9;
+    z-index: 499;
+}
+
+#video .k-slider-selection {
+	background: none;
+}
+#video .k-label {
+	display: none;
+}
+
+/** Camera Controls */
+
+#capture {
+	clear: both;
+	float: left;
+}
+
+.header-inner {
+	border-bottom: 1px solid #aaa;
+}
+.video-controls {
+	margin-top: -60px;
+}
+.video-controls .icon {
+	float: right;
+	padding-right: 0;
+}
+.video-controls .icon:first-child {
+	margin: 0;
+	float: left;
+}
+
+#screenshots {
+	width: 100%;
+	float: left;
+	clear: both;
+	margin-top: 10px;
+}
+
+label {
+	color: #ccc;
+}
+
+label[for='slider-tilt'] {
+	float: right;
+	margin-top: 240px;
+	margin-left: 5px;
+}
+
+label[for='slider-pan'] {
+	text-align: center;
+}
+
+#slider-tilt {
+	min-width: 35px;
+}
+
+.tp-row {
+	margin-top: 10px;
+	margin-bottom: 25px;
+	float: left;
+}
+
+.left-col {
+	float: left;
+	width: 700px;
+}
+
+.right-col {
+	float: left;
+}
+
+.input-controls {
+	float: left;
+}
+
+.input-control {
+	margin-bottom: 10px;
+}
+
+.slider-controls {
+	float: right;
+}
+
+.control {
+	padding-right: 25px;
+	float: right;
+	text-align: center;
+}
+
+.k-label {
+	color: white !important;
+}
+.mini-control .k-widget {
+	height: 150px;
+	clear: none;
+}
+/** 
+ -------------------------------------------------
+ 5) Responsive
+ -------------------------------------------------
+ */
+
+/** Tablet and Smartphone*/
+@media all and (max-width: 680px) {
+	#tps-viewer-menu {
+		width: 100%;
+		padding: 0;
+		margin: 0;
+	}
+	#content-wrapper {
+		width: 100%;
+		padding: 0;
+		margin: 0;
+	}
+	#options-menu {
+		padding: 0;
+	}
+	#nav {
+		padding: 0;
+	}
+	#player-controls {
+		margin: 5px;
+	}
+	#slider {
+		width: 60%;
+	}
+}
+/** Widescreen */
+@media all and (min-width: 1400px) {
+	.camera-action {
+		margin: 5px;
+	}
+}

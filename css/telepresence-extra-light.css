@@ -1,0 +1,137 @@
+/**
+ * COLORS
+ * @@@@@@@@@@@@@@@@@@@@@
+ * white: #ddd;
+ * black: #222;
+ * blue:  #7ea700;
+
+/** Core */
+
+body {
+	background: url('../img/ps_neutral.png');
+}
+
+.theme-extra-light label, .icon {
+	color: #222;
+}
+
+/** App */
+.theme-extra-light #telepresence-wrap .app-header {
+	border-bottom: 2px dotted #7ea700;
+	background: none;
+	color: #222;
+}
+/** @TODO: Change to more general page-header selector */
+.theme-extra-light .page-header {
+	color: #ddd;
+	margin: 0 !important;
+	padding: 30px !important;
+}
+
+.theme-extra-light #telepresence-wrap {
+	background: #fff;
+	border: 2px solid #7ea700;
+}
+
+/** Camera Navigation List */
+
+.theme-extra-light #site-list {
+	/** @TODO: Remove backround & border from main css */
+	background: none;
+	border: none;
+}
+.theme-extra-light .site {
+	color: #222;
+	padding: 10px;
+	border-left: 6px solid #ccc;
+}
+
+.theme-extra-light .site.active, .theme-extra-light .site:hover {
+	border-color: #7ea700;
+	background: none;
+}
+.theme-extra-light .site:after {
+	/** @TODO: Remove from main css */
+	content: "";
+}
+.theme-extra-light .site .icon {
+	color: #222;
+	padding: 0 15px;
+}
+.theme-extra-light .site span {
+	position: relative;
+	top: 5px;
+}
+.theme-extra-light .site.active:after {
+	width: 0;
+	height: 0;
+	border-width: 15px;
+	border-style: solid;
+	border-color: transparent transparent #ddd;
+	content: "";
+	margin: 30px 10px;
+}
+.theme-extra-light .cameras {
+	background: #ddd;
+	margin-top: 19px;
+}
+.theme-extra-light .camera {
+	color: #333;
+	margin-top: 0;
+}
+.theme-extra-light .camera:hover {
+	background: #7ea700 !important;
+}
+
+.theme-extra-light #telepresence-dashboard {
+	margin-top: 55px;
+}
+/** Controls */
+
+.theme-extra-light #controls h3 {
+	color: #222;
+}
+
+.theme-extra-light .input-controls {
+	margin-right: 30px;
+}
+
+.theme-extra-light .control {
+	padding-right: 10px;
+}
+
+.theme-extra-light label[for='slider-pan'] {
+	margin-top: -15px;
+	margin-bottom: 0;
+}
+
+.theme-extra-light label[for='slider-tilt'] {
+	margin-top: 200px;
+	margin-left: 0;
+	text-align: center;
+}
+
+/** Kendo hacks */
+
+.theme-extra-light .k-label {
+	display: none !important;
+}
+
+.theme-extra-light .k-select {
+	height: 100%;
+}
+
+/** Video */
+
+.theme-extra-light #stream {
+	margin-right: 22px;
+	background: #ccc;
+}
+
+.theme-extra-light #stream h1 {
+	color: #333;
+}
+
+.theme-extra-light .tp-row {
+	margin-top: 22px;
+}
