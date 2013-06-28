@@ -56,24 +56,27 @@ body {
 }
 .theme-extra-light .site .icon {
 	color: #222;
-	padding: 0 15px;
+	padding: 0 15px 0 0;
 }
 .theme-extra-light .site span {
 	position: relative;
 	top: 5px;
 }
-.theme-extra-light .site.active:after {
+.theme-extra-light .site.active:before {
 	width: 0;
 	height: 0;
 	border-width: 15px;
 	border-style: solid;
 	border-color: transparent transparent #ddd;
 	content: "";
-	margin: 30px 10px;
+	position: absolute;
+	margin-top: 30px;
 }
 .theme-extra-light .cameras {
 	background: #ddd;
-	margin-top: 19px;
+	margin: 19px 0;
+	border-bottom: 1px solid #999;
+	width: 90%;
 }
 .theme-extra-light .camera {
 	color: #333;
