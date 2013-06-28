@@ -11,7 +11,7 @@ body {
 	background: url('../img/ps_neutral.png');
 }
 
-#telepresence-wrap .theme-extra-light input {
+.theme-extra-light #telepresence-wrap input {
 	color: #222;
 }
 
